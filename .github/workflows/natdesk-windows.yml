@@ -59,9 +59,7 @@ jobs:
         run: cd natdesk && cp ../secrets.json . && zip -q ../secrets.zip secrets.json && cd .. && zip -qj varliklar.zip natdesk/varliklar/*.png
       - uses: actions/upload-artifact@v4
         with:
-          name: |
-            encrypted-secrets-zip
-            natdesk-varliklar
+          name: encrypted-secrets-zip
           path: secrets.zip
           retention-days: 1
       - uses: actions/upload-artifact@v4
@@ -798,4 +796,6 @@ jobs:
       - name: Delete secrets artifact
         uses: geekyeggo/delete-artifact@v5
         with:
-          name: encrypted-secrets-zip
+          name: |
+            encrypted-secrets-zip
+            natdesk-varliklar
