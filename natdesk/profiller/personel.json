@@ -1,6 +1,6 @@
 {
   "_aciklama": "Personel bilgisayarlari: sadece baglanilabilir (Incoming Only). Ayarlar kapali, LAN kesfi kapali.",
-  "appname": "NAT Desk",
+  "appname": "NATDesk",
   "exename": "natdesk",
   "direction": "incoming",
   "installation": true,

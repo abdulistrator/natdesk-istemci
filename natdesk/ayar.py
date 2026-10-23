@@ -29,6 +29,8 @@ def main(profil, cikti):
     p = json.loads((Path(__file__).parent / 'profiller' / f'{profil}.json').read_text(encoding='utf-8'))
     appname, filename = p['appname'], p['exename']
     assert appname.isascii() and re.fullmatch(r'[A-Za-z0-9_-]+', filename), 'ad ve exe adi ASCII olmali'
+    # Uygulama adinda bosluk olmamali: RustDesk kurulumu servis/taskkill komutlarinda adi tirnaksiz kullaniyor
+    assert re.fullmatch(r'[A-Za-z0-9_-]+', appname), 'uygulama adinda bosluk / ozel karakter olmamali'
     c = {'conn-type': p['direction'], 'app-name': appname, 'override-settings': {}, 'default-settings': {}}
     if not p.get('installation', True):
         c['disable-installation'] = 'Y'

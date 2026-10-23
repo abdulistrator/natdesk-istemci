@@ -1,6 +1,6 @@
 {
   "_aciklama": "IT / teknik ekip: sadece disari baglanir (Outgoing Only). Ayarlar acik.",
-  "appname": "NAT Desk",
+  "appname": "NATDesk",
   "exename": "natdesk-teknik",
   "direction": "outgoing",
   "installation": true,
