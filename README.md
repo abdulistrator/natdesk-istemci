@@ -18,6 +18,7 @@ ayarlar bu depodadır.
 | `natdesk/ayar.py` | Sunucu adresi, anahtar, API adresi (tüm profiller) |
 | `natdesk/profiller/*.json` | Profil farkları: bağlantı yönü, ayarlar menüsü, LAN keşfi, kalıcı parola |
 | `natdesk/varliklar/icon.png`, `logo.png` | Simge (512×512) ve pencere logosu |
+| `.github/workflows/natdesk-macos.yml` | macOS derlemesi (Intel + Apple Silicon .dmg) |
 | `natdesk/rdgen-kaynak.txt` | Temel alınan rdgen sürümü (yamalar bu sürümden indirilir) |
 
 Not: RustDesk istemcisi AGPL-3.0 lisanslıdır. Değiştirilmiş istemci başka şirketlere dağıtılırsa kaynak kodu
