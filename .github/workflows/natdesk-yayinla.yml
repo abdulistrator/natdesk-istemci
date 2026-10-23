@@ -1,0 +1,37 @@
+name: NAT Desk yayinla
+run-name: NAT Desk yayinla (calisma ${{ inputs.run_id }} -> ${{ inputs.etiket }})
+# Bir derleme calismasinin dosyalarini (exe / msi / dmg) GitHub Releases'e koyar.
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Derleme calismasinin numarasi (Actions sayfasindaki adres sonundaki sayi)'
+        required: true
+        type: string
+      etiket:
+        description: 'Surum etiketi'
+        required: true
+        default: 'natdesk-1.5.0'
+        type: string
+permissions:
+  contents: write
+  actions: read
+jobs:
+  yayinla:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ github.token }}
+          path: dosyalar
+      - name: Release'e yukle
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          find dosyalar -type f \( -name '*.exe' -o -name '*.msi' -o -name '*.dmg' \) | tee liste.txt
+          [ -s liste.txt ] || { echo "Yayinlanacak dosya yok"; exit 1; }
+          gh release view "${{ inputs.etiket }}" >/dev/null 2>&1 || \
+            gh release create "${{ inputs.etiket }}" --title "NAT Desk (${{ inputs.etiket }})" --notes "NAT Desk istemcileri. natdesk = personel (sadece baglanilabilir), natdesk-teknik = IT ekibi."
+          xargs -a liste.txt -d '\n' gh release upload "${{ inputs.etiket }}" --clobber
