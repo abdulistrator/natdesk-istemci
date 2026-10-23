@@ -1,0 +1,12 @@
+{
+  "_aciklama": "IT / teknik ekip: sadece disari baglanir (Outgoing Only). Ayarlar acik.",
+  "appname": "NAT Desk",
+  "exename": "natdesk-teknik",
+  "direction": "outgoing",
+  "installation": true,
+  "settings": true,
+  "denyLan": false,
+  "permanentPassword": "",
+  "passApproveMode": "password-click",
+  "theme": "light"
+}
