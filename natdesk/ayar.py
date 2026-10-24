@@ -50,6 +50,7 @@ def main(profil, cikti):
         'verification-method': 'use-both-passwords', 'approve-mode': p.get('passApproveMode', 'password-click'),
         'allow-hide-cm': 'N', 'allow-remove-wallpaper': 'Y', 'enable-remote-printer': 'Y', 'enable-camera': 'Y',
         'enable-terminal': 'Y',
+        'view_style': 'adaptive',   # uzak ekran pencereye sigdirilsin (olcekle)
     })
     custom = base64.b64encode(json.dumps(c).encode('ascii')).decode('ascii')
     out = dict(SUNUCU)

@@ -148,6 +148,13 @@ jobs:
             repository: rustdesk/rustdesk
             submodules: recursive
 
+      - name: NAT Desk hakkinda metni
+        shell: bash
+        run: |
+          # "Bu kaotik dunyada gonulden yapildi" yerine NAT Bilisim
+          for f in src/lang/*.rs; do sed -i 's|("Slogan_tip", "[^"]*")|("Slogan_tip", "NAT Bilişim · natbilisim.com")|' "$f"; done
+          grep -h '"Slogan_tip"' src/lang/en.rs src/lang/tr.rs
+
       - name: Set custom app version
         continue-on-error: true
         if: ${{ inputs.app_version != '' }}
