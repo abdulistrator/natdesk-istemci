@@ -152,7 +152,7 @@ jobs:
         shell: bash
         run: |
           # "Bu kaotik dunyada gonulden yapildi" yerine NAT Bilisim
-          for f in src/lang/*.rs; do sed -i 's|("Slogan_tip", "[^"]*")|("Slogan_tip", "NAT Bilişim · natbilisim.com")|' "$f"; done
+          perl -CSD -Mutf8 -pi -e 's/\("Slogan_tip", "[^"]*"\)/("Slogan_tip", "NAT Bilişim · natbilisim.com")/' src/lang/*.rs   # perl: macOS sed -i farkli
           grep -h '"Slogan_tip"' src/lang/en.rs src/lang/tr.rs
 
       - name: Set custom app version
