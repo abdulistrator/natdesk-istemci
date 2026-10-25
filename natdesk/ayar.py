@@ -31,7 +31,9 @@ def main(profil, cikti):
     assert appname.isascii() and re.fullmatch(r'[A-Za-z0-9_-]+', filename), 'ad ve exe adi ASCII olmali'
     # Uygulama adinda bosluk olmamali: RustDesk kurulumu servis/taskkill komutlarinda adi tirnaksiz kullaniyor
     assert re.fullmatch(r'[A-Za-z0-9_-]+', appname), 'uygulama adinda bosluk / ozel karakter olmamali'
-    c = {'conn-type': p['direction'], 'app-name': appname, 'override-settings': {}, 'default-settings': {}}
+    c = {'app-name': appname, 'override-settings': dict(p.get('ozel') or {}), 'default-settings': {}}
+    if p['direction'] in ('incoming', 'outgoing'):   # 'both' = iki yonlu (conn-type yazilmaz)
+        c['conn-type'] = p['direction']
     if not p.get('installation', True):
         c['disable-installation'] = 'Y'
     if not p.get('settings', True):

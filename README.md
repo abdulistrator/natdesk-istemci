@@ -7,8 +7,8 @@ ayarlar bu depodadır.
 ## Derleme
 
 1. **Actions** › **NAT Desk Windows** › **Run workflow**
-2. Profil seç: `personel` (sadece bağlanılabilir) veya `teknik` (sadece dışarı bağlanır)
-3. Yaklaşık 40-60 dakika sonra çalışmanın sayfasında **Artifacts** altından `natdesk` / `natdesk-teknik`
+2. Profil seç: `host` (NATDesk Host: personel, sadece bağlanılır, servis durdurulamaz) veya `natdesk` (NATDesk: IT, iki yönlü)
+3. Yaklaşık 40-60 dakika sonra çalışmanın sayfasında **Artifacts** altından `natdesk-host` / `natdesk`
    paketini indir: içinde `.exe` ve `.msi` var.
 
 ## Ayarlar

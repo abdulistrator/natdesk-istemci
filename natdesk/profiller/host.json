@@ -1,0 +1,16 @@
+{
+  "_aciklama": "NATDesk Host (personel bilgisayarlari, TeamViewer Host gibi): sadece baglanilir, servis olarak calisir ve durdurulamaz, ayarlar kapali. Kalici parola kurulumdan sonra komutla verilir: natdesk-host.exe --password <parola> (yonetici olarak).",
+  "appname": "NATDesk-Host",
+  "exename": "natdesk-host",
+  "direction": "incoming",
+  "installation": true,
+  "settings": false,
+  "denyLan": true,
+  "permanentPassword": "",
+  "passApproveMode": "password-click",
+  "theme": "light",
+  "ozel": {
+    "hide-stop-service": "Y",
+    "allow-command-line-settings-when-settings-disabled": "Y"
+  }
+}

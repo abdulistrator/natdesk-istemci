@@ -1,0 +1,13 @@
+{
+  "_aciklama": "NATDesk (IT / teknik ekip bilgisayarlari, normal TeamViewer gibi): hem baglanir hem baglanilir, ayarlar acik, kalici parola Ayarlar > Guvenlik'ten, panel hesabi ile giris ve adres defteri.",
+  "appname": "NATDesk",
+  "exename": "natdesk",
+  "direction": "both",
+  "installation": true,
+  "settings": true,
+  "denyLan": false,
+  "permanentPassword": "",
+  "passApproveMode": "password-click",
+  "theme": "light",
+  "ozel": {}
+}

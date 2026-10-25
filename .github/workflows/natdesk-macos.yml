@@ -6,9 +6,9 @@ on:
       profil:
         description: 'Profil (natdesk/profiller/<profil>.json)'
         required: true
-        default: 'teknik'
+        default: 'natdesk'
         type: choice
-        options: [personel, teknik]
+        options: [host, natdesk]
       version:
         description: 'RustDesk surumu (etiket)'
         required: true
